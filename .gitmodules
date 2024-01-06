@@ -1,0 +1,3 @@
+[submodule "src/ca.kinesin.teamwork-timers.sdPlugin/lib"]
+	path = src/ca.kinesin.teamwork-timers.sdPlugin/lib
+	url = https://github.com/elgatosf/streamdeck-javascript-sdk

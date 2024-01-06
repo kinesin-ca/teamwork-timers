@@ -1,11 +1,11 @@
 {
 	"SDKVersion": 2,
-	"Author": "Elgato Systems",
+	"Author": "Kinesin Data Technologies Incorporated",
 	"CodePath": "app.html",
-	"Description": "Example description",
-	"Name": "Stream Deck Template",
+	"Description": "Toggle Teamwork Timers",
+	"Name": "Teamwork Timers",
 	"Icon": "actions/template/assets/action",
-	"URL": "https://www.elgato.com/en/gaming/stream-deck",
+	"URL": "https://github.com/kinesin-ca/teamwork-timers",
 	"Version": "1.0.2",
 	"Software": {
 		"MinimumVersion": "5.0"
@@ -20,12 +20,12 @@
 			"MinimumVersion": "10"
 		}
 	],
-	"Category": "Template Plugin",
+	"Category": "Productivity",
 	"CategoryIcon": "actions/template/assets/actionimage",
 	"Actions": [
 		{
 			"Icon": "actions/template/assets/actionimage",
-			"Name": "Example Action",
+			"Name": "Timer",
 			"Controllers": ["Keypad", "Encoder"],
 			"Encoder": {
 				"layout": "$B1",
@@ -42,7 +42,7 @@
 				}
 			],
 			"Tooltip": "This is an example tooltip",
-			"UUID": "ca.kinesin.teamwork-timers.action",
+			"UUID": "ca.kinesin.teamwork-timers.toggle",
 			"PropertyInspectorPath": "actions/template/property-inspector/inspector.html"
 		}
 	]

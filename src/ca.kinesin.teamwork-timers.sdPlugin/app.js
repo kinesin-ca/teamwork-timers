@@ -8,17 +8,6 @@ const myAction = new Action('ca.kinesin.teamwork-timers.toggle');
  */
 $SD.onConnected(({ actionInfo, appInfo, connection, messageType, port, uuid }) => {
 	console.log('Stream Deck connected!');
-	// console.log('Getting Settings');
-	// $SD.getSettings(context);
-	// console.log('Done Getting Settings');
-});
-
-$SD.onDidReceiveGlobalSettings(({ context, payload }) => {
-	console.log('Got GLOBAL settings for coords ', payload.coordinates);
-});
-
-myAction.onDidReceiveSettings(({ action, event, context, device, payload }) => {
-	console.log('Got settings for coords ', payload.coordinates);
 });
 
 myAction.onKeyUp(({ action, context, device, event, payload }) => {
@@ -29,8 +18,35 @@ myAction.onKeyUp(({ action, context, device, event, payload }) => {
 	 *		coordinates -- coordinates of button
 	 *		state -- zero-based index of current state
 	*/
-});
+	console.log(payload.coordinates);
+	console.log(payload.settings);
 
-myAction.onDialRotate(({ action, context, device, event, payload }) => {
-	console.log('Your dial code goes here!');
+	fetch(`https://api.teamwork.com/api/projects/api/v3/me/timers.json`,
+		headers = {
+			"Authorization": `Bearer ${payload.settings.apiKey}`
+		},
+		body = {
+			description: "Streamdeck",
+			// isBillable: 
+			projectId: payload.settings.projectId,
+
+		}
+	).then((resp) => {
+			console.log(resp);
+	});
+
+
+	// /projects/api/v3/me/timers.json
+	/*
+	* Request contains information of a timer to be created or updated.
+  * timer Timer Timer contains all the information returned from a timer.
+  *     description string
+  *     isBillable	boolean
+  *     isRunning		boolean
+  *     projectId		integer
+  *     seconds			integer -- only valid for POST requests
+  *     stopRunningTimers boolean
+  *     taskId      integer
+	*/
+
 });

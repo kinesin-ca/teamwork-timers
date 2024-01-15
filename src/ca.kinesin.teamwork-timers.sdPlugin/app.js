@@ -11,42 +11,31 @@ $SD.onConnected(({ actionInfo, appInfo, connection, messageType, port, uuid }) =
 });
 
 myAction.onKeyUp(({ action, context, device, event, payload }) => {
-	console.log('Your key code goes here!');
 	/*
 	 * payload has:
 	 *		settings -- values to persist
 	 *		coordinates -- coordinates of button
 	 *		state -- zero-based index of current state
 	*/
-	console.log(payload.coordinates);
-	console.log(payload.settings);
 
-	fetch(`https://api.teamwork.com/api/projects/api/v3/me/timers.json`,
-		headers = {
-			"Authorization": `Bearer ${payload.settings.apiKey}`
-		},
-		body = {
-			description: "Streamdeck",
-			// isBillable: 
-			projectId: payload.settings.projectId,
+	const b64apiKey = btoa(payload.settings.apiKey);
 
+	fetch(`https://${payload.settings.subDomain}.teamwork.com/projects/api/v3/me/timers.json`,
+		{
+			method: "POST",
+			headers: {
+				Authorization: `Basic ${b64apiKey}`
+			},
+			body: JSON.stringify({
+				timer: {
+				description: "Streamdeck Button",
+				isBillable: payload.settings.billable === "yes",
+				projectId: Number(payload.settings.projectId),
+				stopRunningTimers: true,
+			}})
 		}
-	).then((resp) => {
-			console.log(resp);
+	).then((resp) => resp.json())
+	.then((payload) => {
+			console.log(payload);
 	});
-
-
-	// /projects/api/v3/me/timers.json
-	/*
-	* Request contains information of a timer to be created or updated.
-  * timer Timer Timer contains all the information returned from a timer.
-  *     description string
-  *     isBillable	boolean
-  *     isRunning		boolean
-  *     projectId		integer
-  *     seconds			integer -- only valid for POST requests
-  *     stopRunningTimers boolean
-  *     taskId      integer
-	*/
-
 });

@@ -17,6 +17,7 @@ git submodule update
 1. Drag the "Teamwork Timer" button to your grid
 2. Replace the icon
 3. Fields
+  - **API Key**: Get your API key by going to `Edit Profile`, then the `API Keys` tab, and enabling. See [this guide](https://support.teamwork.com/desk/profile-settings/generating-an-api-key) for help if you need more help.
   - **Subdomain**: This is the first part of your Teamwork URL (e.g. the `COMPANY` of `COMPANY.teamwork.com`)
   - **Description**: This is what will appear as the line item of the timer
   - **Billable?**: Click this if the timer should be billable

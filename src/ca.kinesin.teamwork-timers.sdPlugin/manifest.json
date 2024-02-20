@@ -4,7 +4,7 @@
 	"CodePath": "app.html",
 	"Description": "Toggle Teamwork Timers",
 	"Name": "Teamwork Timers",
-	"Icon": "actions/template/assets/action",
+	"Icon": "actions/template/assets/action-dark",
 	"URL": "https://github.com/kinesin-ca/teamwork-timers",
 	"Version": "1.0.2",
 	"Software": {

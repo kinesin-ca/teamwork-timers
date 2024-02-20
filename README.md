@@ -34,3 +34,9 @@ git submodule update
   - **Billable?**: Click this if the timer should be billable
   - **ProjectID**: The numeric ID of the project to track. (e.g. the `1234567` in `https://COMPANY.teamwork.com/app/projects/1234567/time`)
   - **TaskID**: Optional task ID
+
+
+## Packaging / Distribution
+
+[Official Documentation](https://developer.elgato.com/documentation/stream-deck/sdk/exporting-your-plugin/)
+

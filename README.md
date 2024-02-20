@@ -1,5 +1,16 @@
 # Streamdeck Teamwork Timer Toggle
 
+## Development
+
+```
+ln -s $(pwd)/src/ca.kinesin.teamwork-timers.sdPlugin ~/Library/Application\ Support/com.elgato.StreamDeck/Plugins
+defaults write com.elgato.StreamDeck html_remote_debugging_enabled -bool YES
+```
+
+# Debug tools
+
+[Debug Tools](http://localhost:23654/)
+
 ## Installation (MacOS)
 
 ```sh

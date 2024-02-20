@@ -37,11 +37,15 @@
 				}
 			},
 			"States": [
+				{ "Image": "actions/template/assets/action-dark",
+          "TitleColor": "#ffffff"
+        },
 				{
-					"Image": "actions/template/assets/action"
-				}
+          "Image": "actions/template/assets/action-light",
+          "TitleColor": "#000000"
+        }
 			],
-			"Tooltip": "This is an example tooltip",
+			"Tooltip": "Toggle a timer in Teamwork",
 			"UUID": "ca.kinesin.teamwork-timers.toggle",
 			"PropertyInspectorPath": "actions/template/property-inspector/inspector.html"
 		}
